@@ -9,10 +9,10 @@
   }
   
   const result = sum();
-  export let text = result;
+  export let num = result;
 
 </script>
 
 <div use:styleable={$component.styles}>
-  This is a custom component. The text setting is: {text}.
+  This is a new-custom component. The text setting is: {num}.
 </div>
