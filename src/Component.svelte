@@ -11,7 +11,7 @@
       }
   };
   
-  WebAssembly.instantiateStreaming(fetch("./side_module.wasm"), importObject).then(result => {
+  WebAssembly.instantiateStreaming(fetch("side_module.wasm"), importObject).then(result => {
       const value = result.instance.exports.Increment(17);
       _text = value.toString();
   });
