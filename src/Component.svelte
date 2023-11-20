@@ -2,23 +2,16 @@
   import { getContext } from "svelte"
   const { styleable } = getContext("sdk")
   const component = getContext("component")
-  
-  const _text;
 
-  const importObject = {
-      env: {
-          __memory_base: 0,	
-      }
-  };
-  
-  WebAssembly.instantiateStreaming(fetch("./side_module.wasm"), importObject).then(result => {
-      const value = result.instance.exports.Increment(17);
-      _text = value.toString();
-  });
+  function sum() {
+    return 3 + 2;
+  }
 
-  export let text = _text;
+  const result = sum();
+
+  export let text = result;
 </script>
 
 <div use:styleable={$component.styles}>
-  This is a new-custom component. 17 + 1 is: {text}.
+  This is a new-custom component. 3 + 2 is: {text}.
 </div>
